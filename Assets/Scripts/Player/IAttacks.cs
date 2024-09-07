@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IAttacks
 {
-    public void Execute() { }
+    void Execute();
 }

@@ -7,6 +7,7 @@ public class AnimatorManager : MonoBehaviour
 {
     [SerializeField] Controller controller;
     [SerializeField] Animator animator;
+    [SerializeField] AttackManager myAM;
 
     private void Start()
     {
@@ -22,5 +23,29 @@ public class AnimatorManager : MonoBehaviour
             Debug.Log(Mathf.Clamp01(controller.GetMovementInput().normalized.z));
         }
         else animator.SetBool("isMoving", false);
+    }
+
+    public void ButtonA(string triggerName)
+    {
+        if (myAM.isReady0)
+            animator.SetTrigger(triggerName);
+    }
+
+    public void ButtonB(string triggerName)
+    {
+        if (myAM.isReady1)
+            animator.SetTrigger(triggerName);
+    }
+
+    public void ButtonC(string triggerName)
+    {
+        if (myAM.isReady2)
+            animator.SetTrigger(triggerName);
+    }
+
+    public void ButtonD(string triggerName)
+    {
+        if(myAM.isReady3)
+            animator.SetTrigger(triggerName);
     }
 }
