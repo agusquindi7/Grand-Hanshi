@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IAttacks
 {
-    void Execute();
+    void Execute(Vector3 pos, float radius);
 }

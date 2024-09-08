@@ -16,3 +16,6 @@ MonoBehaviour:
   currentCD: 0
   maxCD: 1.2
   triggerName: jabPunch
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 183

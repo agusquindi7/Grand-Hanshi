@@ -16,3 +16,6 @@ MonoBehaviour:
   currentCD: 0
   maxCD: 3
   triggerName: highKick
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 183
