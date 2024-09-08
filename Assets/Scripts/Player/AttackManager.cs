@@ -13,6 +13,7 @@ public class AttackManager : AttackController
 
     public bool isReady0, isReady1, isReady2, isReady3;
     //Almaceno los datos de los SO, para poder modificarlos 
+
     public void Start()
     {
         for (int i = 0; i < mcds.Length; i++)
@@ -62,7 +63,7 @@ public class AttackManager : AttackController
         if (cds[0] == mcds[0])
         {
             cds[0] = 0;
-            Debug.Log("Execute");
+            attacks[0].Execute(transform.position , 3f);
         }
     }
 
@@ -71,7 +72,7 @@ public class AttackManager : AttackController
         if (cds[1] == mcds[1])
         {
             cds[1] = 0;
-            Debug.Log("Execute");
+            attacks[1].Execute(transform.position, 3f);
         }
     }
 
@@ -80,7 +81,7 @@ public class AttackManager : AttackController
         if (cds[2] == mcds[2])
         {
             cds[2] = 0;
-            Debug.Log("Execute");
+            attacks[2].Execute(transform.position, 3f);
         }
     }
 
@@ -89,7 +90,7 @@ public class AttackManager : AttackController
         if (cds[3] == mcds[3])
         {
             cds[3] = 0;
-            Debug.Log("Execute");
+            attacks[3].Execute(transform.position, 3f);
         }
     }
 }
