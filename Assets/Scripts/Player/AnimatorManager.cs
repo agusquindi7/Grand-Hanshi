@@ -20,7 +20,7 @@ public class AnimatorManager : MonoBehaviour
         {
             animator.SetBool("isMoving", true);
             animator.SetFloat("speed", Mathf.Clamp01(controller.GetMovementInput().normalized.z));
-            Debug.Log(Mathf.Clamp01(controller.GetMovementInput().normalized.z));
+            //Debug.Log(Mathf.Clamp01(controller.GetMovementInput().normalized.z));
         }
         else animator.SetBool("isMoving", false);
     }

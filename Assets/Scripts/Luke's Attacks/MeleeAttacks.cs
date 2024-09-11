@@ -17,9 +17,19 @@ public class MeleeAttacks : ScriptableObject , IAttacks
     public void Execute(Vector3 pos, float radius)
     {
         Collider[] colliders = Physics.OverlapSphere(pos, radius, layerMask);
-        //Debug.Log(colliders[0].name);
-        //OnHitDEMO myOH = colliders[0].GetComponent<OnHitDEMO>();
-        //myOH.OnHitEnemy(dmg);
+        if (colliders.Length > 0)
+        {
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                Debug.Log(colliders[i].name);
+                IDamageable[] damageable = colliders[i].GetComponents<IDamageable>();
+                foreach (IDamageable damageableEntity in damageable)
+                {
+                    damageableEntity.TakeDamage(dmg);
+                }
+            }
+            //myOH.OnHitEnemy(dmg);
+        }
     }
 
 }

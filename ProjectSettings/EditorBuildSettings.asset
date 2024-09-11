@@ -4,9 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FirstDojo.unity
+    guid: c850ee8c3b14cc8459e7e186857cf567
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: a1190a588cdfac84fa517ca443775ca5, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 10a95203f8c22134bb038c13102a4c6c,
       type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 636aa925a6f49e04e97578a0a0a0ed0d, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 4eb9db0023c1e7b46993a8b1df4eb7d6, type: 2}
