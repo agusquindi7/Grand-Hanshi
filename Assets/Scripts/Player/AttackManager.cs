@@ -63,7 +63,7 @@ public class AttackManager : AttackController
         if (cds[0] == mcds[0])
         {
             cds[0] = 0;
-            attacks[0].Execute(transform.position , 3f);
+            //attacks[0].execute(transform.position, 3f);
         }
     }
 
@@ -72,7 +72,7 @@ public class AttackManager : AttackController
         if (cds[1] == mcds[1])
         {
             cds[1] = 0;
-            attacks[1].Execute(transform.position, 3f);
+            //attacks[1].Execute(transform.position, 3f);
         }
     }
 
@@ -81,7 +81,7 @@ public class AttackManager : AttackController
         if (cds[2] == mcds[2])
         {
             cds[2] = 0;
-            attacks[2].Execute(transform.position, 3f);
+            //attacks[2].Execute(transform.position, 3f);
         }
     }
 
@@ -90,7 +90,7 @@ public class AttackManager : AttackController
         if (cds[3] == mcds[3])
         {
             cds[3] = 0;
-            attacks[3].Execute(transform.position, 3f);
+            //attacks[3].Execute(transform.position, 3f);
         }
     }
 }
