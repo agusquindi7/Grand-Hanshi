@@ -7,6 +7,12 @@ public class Player : MonoBehaviour
     [SerializeField] float _speed;
     [SerializeField] Controller _controller;
 
+    [SerializeField] MyRemoteConfig myRC;
+
+    public void PlayerLateStart()
+    {
+        _speed = myRC.playerSpeed;
+    }
 
     void Update()
     {

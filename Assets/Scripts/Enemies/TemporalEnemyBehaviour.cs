@@ -6,7 +6,7 @@ public class TemporalEnemyBehaviour : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] Rigidbody enemyRB;
-    [SerializeField] float speed = 1.5f;
+    [SerializeField] float speed;
     [SerializeField] Animator animator;
     [SerializeField] float dmg = 3f;
     [SerializeField] float attackRange = 0.5f;
@@ -15,11 +15,15 @@ public class TemporalEnemyBehaviour : MonoBehaviour
     private float cooldownDuration = 2f;
     private float cooldownTimer = 0f;
 
-    void Start()
+    //Unity Remote Config
+    [SerializeField] MyRemoteConfig myRC;
+    public void LateStart()
     {
         if (animator == null) animator = GetComponent<Animator>();
         if (enemyRB == null) enemyRB = GetComponent<Rigidbody>();
         cooldownTimer = 0f;
+
+        speed = myRC.enemySpeed;
     }
 
     void Update()

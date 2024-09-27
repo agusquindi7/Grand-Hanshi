@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"fe8d8c8a-ad08-4d69-ac14-76dfef8e2ed3\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"EnemyName\",\r\n      \"type\": \"string\",\r\n     
+    \"value\": \"Flavio Miclima\"\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n     
+    \"entityId\": \"86d5b636-6d90-47c9-a7bb-80786bdd315f\"\r\n    },\r\n    \"rs\":
+    {\r\n      \"key\": \"EnemySpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f8e5ed08-87a3-4972-b810-eeaa2cbcd05f\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 2.5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"38dba157-d697-431d-a9f9-f80238fd9b65\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"PlayerLife\",\r\n      \"type\": \"int\",\r\n      \"value\": 100\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4fffc263-35e6-4713-bb2b-9e7783788072\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"EnemyLife\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 100\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"fe8d8c8a-ad08-4d69-ac14-76dfef8e2ed3\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"EnemyName\",\r\n      \"type\": \"string\",\r\n     
+    \"value\": \"Flavio Miclima\"\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n     
+    \"entityId\": \"86d5b636-6d90-47c9-a7bb-80786bdd315f\"\r\n    },\r\n    \"rs\":
+    {\r\n      \"key\": \"EnemySpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f8e5ed08-87a3-4972-b810-eeaa2cbcd05f\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 2.5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"38dba157-d697-431d-a9f9-f80238fd9b65\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"PlayerLife\",\r\n      \"type\": \"int\",\r\n      \"value\": 100\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4fffc263-35e6-4713-bb2b-9e7783788072\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"EnemyLife\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 100\r\n    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"962bdc4a-8181-43f5-b662-c806b36fa322\",\r\n   
+    \"name\": \"production\",\r\n    \"id\": \"8fdb4714-dddf-4499-a164-9c9dd876aec9\",\r\n   
+    \"isDefault\": true,\r\n    \"createdAt\": \"2024-09-27T17:31:18Z\",\r\n    \"updatedAt\":
+    \"2024-09-27T17:31:18Z\"\r\n  }\r\n]"

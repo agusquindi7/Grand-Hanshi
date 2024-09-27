@@ -8,9 +8,11 @@ public class PlayerLife : MonoBehaviour
 {
     [SerializeField] float life;
     [SerializeField] float maxLife;
-    private void Start()
+
+    [SerializeField] MyRemoteConfig myRC;
+    public void LateStart()
     {
-        life = maxLife;
+        life = myRC.playerLife;
     }
 
     public void TakeDamage(float dmg)

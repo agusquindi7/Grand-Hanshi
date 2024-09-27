@@ -8,20 +8,17 @@ public class EnemyLife : EntityLife , IDamageable
     public void TakeDamage(float dmg)
     {
         life -= dmg;
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        life = maxLife;
-    }
-
-    private void Update()
-    {
         if (life < 1)
         {
             SceneManager.LoadScene("AnimatedMenu");
             Destroy(gameObject);
         }
+    }
+
+    // Start is called before the first frame update
+    public void OnEnable()
+    {
+        life = MyRemoteConfig.Instance.maxEnemyLife;
     }
 }
