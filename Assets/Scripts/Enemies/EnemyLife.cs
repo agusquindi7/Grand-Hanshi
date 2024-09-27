@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyLife : EntityLife , IDamageable
 {
@@ -17,6 +18,10 @@ public class EnemyLife : EntityLife , IDamageable
 
     private void Update()
     {
-        if (life < 1) Destroy(gameObject);
+        if (life < 1)
+        {
+            SceneManager.LoadScene("AnimatedMenu");
+            Destroy(gameObject);
+        }
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de36407cba255c24ba6f853d836e4b85, type: 3}
   m_Name: HighKick
   m_EditorClassIdentifier: 
-  dmg: 25
+  dmg: 18
   currentCD: 0
   maxCD: 3
   triggerName: highKick
