@@ -10,9 +10,10 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] float maxLife;
 
     [SerializeField] MyRemoteConfig myRC;
-    public void LateStart()
+    public void Start()
     {
-        life = myRC.playerLife;
+        //life = myRC.playerLife;
+        life = maxLife;
     }
 
     public void TakeDamage(float dmg)

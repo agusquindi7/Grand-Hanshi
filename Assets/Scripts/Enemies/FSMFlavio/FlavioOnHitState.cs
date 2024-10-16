@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlavioOnHitState : MonoBehaviour
+public class FlavioOnHitState : FSMBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Awake(FSMStateManager fsm)
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Execute(FSMStateManager fsm)
     {
-        
+        throw new System.NotImplementedException();
+    }
+
+    public override void Sleep(FSMStateManager fsm)
+    {
+        throw new System.NotImplementedException();
     }
 }

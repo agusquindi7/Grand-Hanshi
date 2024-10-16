@@ -2,31 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlavioFollowState : IState
+public class FlavioFollowState : FSMBaseState
 {
-    Animator _anim;
-    Rigidbody _enemyRB;
-    Transform _target;
-
-    public FlavioFollowState(Animator anim , Rigidbody rigidbody, Transform target)
+    public override void Awake(FSMStateManager fsm)
     {
-        _anim = anim;
-        _enemyRB = rigidbody;
-        _target = target;
+        Debug.Log("ENTER FOLLOW STATE");
+        fsm.anim.SetBool("isIdle", false);
     }
 
-    public void Awake()
+    public override void Execute(FSMStateManager fsm)
     {
-        _anim.SetBool("isIdle", false);
-        Debug.Log("ENTERING FOLLOW STATE");
+        if (fsm.GetDistance() > fsm.followRadius)
+        {
+            fsm.SwitchState(fsm.idleState);
+        }
+        else 
+        {
+            //Si entro en rango de seguir entonces miro a Luke
+            Vector3 dir = (fsm.target.position - fsm.transform.position);
+            dir.y = 0;
+            Quaternion lookRotation = Quaternion.LookRotation(dir);
+            fsm.transform.rotation = Quaternion.Slerp(fsm.transform.rotation,lookRotation,Time.deltaTime*fsm.rotationSpeed);
+            //y tambien lo sigo si esta en mi rango de seguir
+            fsm.transform.position = Vector3.MoveTowards(fsm.transform.position,fsm.target.position,.01f);
+        }
+        if(fsm.GetDistance() < fsm.attackRadius)
+        {
+            fsm.SwitchState(fsm.attackState);
+        }
     }
 
-    public void Execute()
+    public override void Sleep(FSMStateManager fsm)
     {
-    }
-
-    public void Sleep()
-    {
-        Debug.Log("EXITING FOLLOW STATE");
+        Debug.Log("EXIT FOLLOW STATE");
     }
 }

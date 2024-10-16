@@ -2,28 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlavioIdleState : IState
+public class FlavioIdleState : FSMBaseState
 {
-    Animator _anim;
-
-    public FlavioIdleState(Animator anim)
+    public override void Awake(FSMStateManager fsm)
     {
-        _anim = anim;
+        Debug.Log("ENTER IDLE STATE");
+        fsm.anim.SetBool("isIdle", true);
     }
 
-    public void Awake()
+    public override void Execute(FSMStateManager fsm)
     {
-        _anim.SetBool("isIdle",true);
-        Debug.Log("ENTERING IDLE STATE");
+        if(fsm.GetDistance()<fsm.followRadius) //Si la distancia es menor al radio cambio a estado Follow
+        {
+            fsm.SwitchState(fsm.followState);
+        }
     }
 
-    public void Execute()
+    public override void Sleep(FSMStateManager fsm)
     {
-        throw new System.NotImplementedException();
-    }
-
-    public void Sleep()
-    {
-        Debug.Log("EXITING IDLE STATE");
+        Debug.Log("EXIT IDLE STATE");
     }
 }

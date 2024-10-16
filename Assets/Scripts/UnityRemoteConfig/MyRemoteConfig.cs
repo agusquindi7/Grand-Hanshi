@@ -13,11 +13,11 @@ public class MyRemoteConfig : MonoBehaviour
     public float enemySpeed;
     public string enemyName;
 
-    public EnemyNameDisplay myEND;
-    public Player player;
-    public PlayerLife playerLifeScript;
-    public EnemyLife enemyLife;
-    public TemporalEnemyBehaviour myTEB;
+    //public EnemyNameDisplay myEND;
+    //public Player player;
+    //public PlayerLife playerLifeScript;
+    //public EnemyLife enemyLife;
+    //public TemporalEnemyBehaviour myTEB;
 
     public static MyRemoteConfig Instance { get ; private set; }
     public struct userAttributes { }
@@ -70,11 +70,5 @@ public class MyRemoteConfig : MonoBehaviour
         maxEnemyLife = RemoteConfigService.Instance.appConfig.GetInt("EnemyLife");
         playerSpeed = RemoteConfigService.Instance.appConfig.GetFloat("PlayerSpeed");
         enemySpeed = RemoteConfigService.Instance.appConfig.GetFloat("EnemySpeed");
-
-        myEND.LateStart();
-        myTEB.LateStart();
-        playerLifeScript.LateStart();
-        //enemyLife.LateStart();
-        player.PlayerLateStart();
     }
 }

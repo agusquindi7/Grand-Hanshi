@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class EnemyLife : EntityLife , IDamageable
 {
+    private void Start()
+    {
+        life = maxLife;
+    }
+
     public void TakeDamage(float dmg)
     {
         life -= dmg;
@@ -17,8 +22,8 @@ public class EnemyLife : EntityLife , IDamageable
     }
 
     // Start is called before the first frame update
-    public void OnEnable()
-    {
-        life = MyRemoteConfig.Instance.maxEnemyLife;
-    }
+    //public void OnEnable()
+    //{
+    //    life = MyRemoteConfig.Instance.maxEnemyLife;
+    //}
 }
