@@ -11,12 +11,12 @@ public class EnemyNameDisplay : MonoBehaviour
 
     [SerializeField] MyRemoteConfig myRC;
 
-    public void LateStart()
+    public void Start()
     {
         // Obtén el nombre del enemigo desde MyRemoteConfig
         SetEnemyName(MyRemoteConfig.Instance.enemyName);
         //Debug.Log(MyRemoteConfig.Instance.enemyName);
-        Debug.Log("Cambiando el nombre a " + myRC.enemyName);
+        Debug.Log("Cambiando el nombre a " + MyRemoteConfig.Instance.enemyName);
     }
 
     void Update()

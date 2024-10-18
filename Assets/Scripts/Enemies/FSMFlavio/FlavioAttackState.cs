@@ -25,6 +25,11 @@ public class FlavioAttackState : FSMBaseState
                 fsm.anim.SetTrigger("isAttacking");
             }
         }
+        //if (fsm.enemyLife.TakeDamage(0f))
+        //{
+        //    Debug.Log("El enemigo recibio daño");
+        //    fsm.SwitchState(fsm.onHitState);
+        //}
     }
 
     public override void Sleep(FSMStateManager fsm)

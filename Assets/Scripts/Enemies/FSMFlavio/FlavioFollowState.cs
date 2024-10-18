@@ -24,12 +24,18 @@ public class FlavioFollowState : FSMBaseState
             Quaternion lookRotation = Quaternion.LookRotation(dir);
             fsm.transform.rotation = Quaternion.Slerp(fsm.transform.rotation,lookRotation,Time.deltaTime*fsm.rotationSpeed);
             //y tambien lo sigo si esta en mi rango de seguir
-            fsm.transform.position = Vector3.MoveTowards(fsm.transform.position,fsm.target.position,.01f);
+            fsm.transform.position = Vector3.MoveTowards(fsm.transform.position,fsm.target.position,fsm.moveSpeed/100f);
         }
         if(fsm.GetDistance() < fsm.attackRadius)
         {
             fsm.SwitchState(fsm.attackState);
         }
+
+        //if (fsm.enemyLife.TakeDamage(0f))
+        //{
+        //    Debug.Log("El enemigo recibio daño");
+        //    fsm.SwitchState(fsm.onHitState);
+        //}
     }
 
     public override void Sleep(FSMStateManager fsm)

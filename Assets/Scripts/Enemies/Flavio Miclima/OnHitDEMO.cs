@@ -20,6 +20,7 @@ public class OnHitDEMO : MonoBehaviour
 
     private void Update()
     {
+        //Temporalmente se destruye pero tendriamos que poner una animacion de como que se sienta, no que se muera porque no queremos matarlo
         if (life < 1) Destroy(gameObject);
     }
 }

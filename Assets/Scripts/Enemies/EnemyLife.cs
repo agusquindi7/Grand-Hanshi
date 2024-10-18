@@ -7,7 +7,7 @@ public class EnemyLife : EntityLife , IDamageable
 {
     private void Start()
     {
-        life = maxLife;
+        life = MyRemoteConfig.Instance.maxEnemyLife;
     }
 
     public void TakeDamage(float dmg)

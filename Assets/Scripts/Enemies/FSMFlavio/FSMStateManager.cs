@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FSMStateManager : MonoBehaviour
+public class FSMStateManager : MonoBehaviour, IDamageable
 {
     //Declaro un estado actual de tipo FSMBaseState que es el estado del que heredan todos los estados
     FSMBaseState _currentState;
@@ -16,17 +16,27 @@ public class FSMStateManager : MonoBehaviour
     public Rigidbody rigidBody;
     public Transform target;
     public Transform hitboxFlavio;
+    public IDamageable enemyLife;
     [Header("Values")]
-    public float followRadius, attackRadius, rotationSpeed, moveSpeed;
+    public float followRadius;
+    public float attackRadius;
+    public float rotationSpeed;
+    public float moveSpeed;
     public float cooldown; 
     public float maxCD;
     public LayerMask layerMask;
     public float dmg;
+    public float timeToRecover = 1.5f;
+    //public bool isGettingHit;
+    public float onHitCD;
 
     private void Awake()
     {
+        moveSpeed = MyRemoteConfig.Instance.enemySpeed;
+
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
+        enemyLife = GetComponent<EnemyLife>();
     }
 
     private void Start()
@@ -72,5 +82,10 @@ public class FSMStateManager : MonoBehaviour
                 hit.GetComponent<PlayerLife>().TakeDamage(dmg);
             }
         }
+    }
+
+    public void TakeDamage(float dmg)
+    {
+        SwitchState(onHitState);
     }
 }
