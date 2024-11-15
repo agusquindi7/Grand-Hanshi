@@ -14,6 +14,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position += _controller.GetMovementInput() * _speed * Time.deltaTime; 
+        transform.position += _controller.GetMovementInput() * _speed * Time.deltaTime;
     }
 }
