@@ -21,7 +21,7 @@ public class FSMStateManager : MonoBehaviour, IDamageable
     public float followRadius;
     public float attackRadius;
     public float rotationSpeed;
-    public float moveSpeed;
+    public float moveSpeed = 1.5f;
     public float cooldown; 
     public float maxCD;
     public LayerMask layerMask;
@@ -32,7 +32,7 @@ public class FSMStateManager : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        moveSpeed = MyRemoteConfig.Instance.enemySpeed;
+        //moveSpeed = MyRemoteConfig.Instance.enemySpeed;
 
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
@@ -44,9 +44,11 @@ public class FSMStateManager : MonoBehaviour, IDamageable
         _currentState = idleState;
 
         _currentState.Awake(this);
+
+        PauseManager.instance.Subscribe(ArtificialUpdate);
     }
 
-    private void Update()
+    private void ArtificialUpdate()
     {
         _currentState.Execute(this);
     }
@@ -87,5 +89,10 @@ public class FSMStateManager : MonoBehaviour, IDamageable
     public void TakeDamage(float dmg)
     {
         SwitchState(onHitState);
+    }
+
+    private void OnDestroy()
+    {
+        PauseManager.instance.Unsubscribe(ArtificialUpdate);
     }
 }

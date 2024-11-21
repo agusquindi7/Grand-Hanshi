@@ -12,9 +12,11 @@ public class AnimatorManager : MonoBehaviour
     private void Start()
     {
         if (animator == null) animator = this.GetComponent<Animator>();
+
+        PauseManager.instance.Subscribe(ArtificialUpdate);
     }
 
-    private void Update()
+    private void ArtificialUpdate()
     {
         if (controller.GetMovementInput().magnitude != 0)
         {
@@ -23,6 +25,11 @@ public class AnimatorManager : MonoBehaviour
             //Debug.Log(Mathf.Clamp01(controller.GetMovementInput().normalized.z));
         }
         else animator.SetBool("isMoving", false);
+    }
+
+    private void OnDestroy()
+    {
+        PauseManager.instance.Unsubscribe(ArtificialUpdate);
     }
 
     public void ButtonA(string triggerName)
