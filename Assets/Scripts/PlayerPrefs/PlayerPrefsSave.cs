@@ -25,6 +25,10 @@ public class PlayerPrefsSave : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    private void Start()
+    {
         LoadGame();
     }
 
@@ -43,7 +47,7 @@ public class PlayerPrefsSave : MonoBehaviour
         Debug.Log("Saving game...");
     }
 
-    void LoadGame()
+    public void LoadGame()
     {
         if (PlayerPrefs.HasKey("Data_Currency"))
             _currency = PlayerPrefs.GetInt("Data_Currency", 100);
@@ -57,6 +61,8 @@ public class PlayerPrefsSave : MonoBehaviour
     {
         int currentCurrency = PlayerPrefs.GetInt("Data_Currency");
         int currentGems = PlayerPrefs.GetInt("Data_Gems");
+
+        Debug.Log($"{currentCurrency} and {currentGems}");
 
         currentCurrency += pointsToAdd;
         currentGems += gemsToAdd;

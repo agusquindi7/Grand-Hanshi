@@ -3289,7 +3289,7 @@ GameObject:
   - component: {fileID: 295635914}
   - component: {fileID: 295635913}
   m_Layer: 0
-  m_Name: PlayerPrefs
+  m_Name: PlayerPrefsSave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

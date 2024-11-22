@@ -16,7 +16,6 @@ public class AdsManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
 
@@ -24,8 +23,8 @@ public class AdsManager : MonoBehaviour
 
         StartCoroutine(BannerAd());
 
-        //_interstitialAds.LoadInterstitialAd();
-        //StartCoroutine(InterstitialAd());
+        _interstitialAds.LoadInterstitialAd();
+        StartCoroutine(InterstitialAd());
     }
 
     public void ShowRewardedAd() => _rewardedAds.ShowRewardedAd();

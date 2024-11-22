@@ -12,30 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"3f6e3a2b-a847-4727-8c0b-96cf85d5c5c0\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"068d8d55-bcc3-4235-b67c-b44be1237964\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyName\",\r\n      \"type\": \"string\",\r\n     
     \"value\": \"Flavio Miclima\"\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n     
-    \"entityId\": \"b5cdb09f-2b23-4f45-9d4b-79693a68eb86\"\r\n    },\r\n    \"rs\":
+    \"entityId\": \"984b8e08-6104-41a1-94f3-704cf6a60aae\"\r\n    },\r\n    \"rs\":
     {\r\n      \"key\": \"EnemySpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    0.5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"91ca6154-8343-4713-9697-6ffeae8edcab\"\r\n   
+    0.5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"90b3fe76-4d4d-4562-92be-36dcf07a088d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 3.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"d61b31fe-1ba3-4533-8d05-891d7bf43ab1\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"1f510064-5093-437f-b82b-60d4d9475dba\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"PlayerLife\",\r\n      \"type\": \"int\",\r\n      \"value\": 100\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"a2e28cf4-fb33-4a38-b305-c52587dbe6af\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"da7e37fc-0ed4-43da-895b-a0902b587fa1\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyLife\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 100\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"3f6e3a2b-a847-4727-8c0b-96cf85d5c5c0\"\r\n   
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"068d8d55-bcc3-4235-b67c-b44be1237964\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyName\",\r\n      \"type\": \"string\",\r\n     
     \"value\": \"Flavio Miclima\"\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n     
-    \"entityId\": \"b5cdb09f-2b23-4f45-9d4b-79693a68eb86\"\r\n    },\r\n    \"rs\":
+    \"entityId\": \"984b8e08-6104-41a1-94f3-704cf6a60aae\"\r\n    },\r\n    \"rs\":
     {\r\n      \"key\": \"EnemySpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    0.5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"91ca6154-8343-4713-9697-6ffeae8edcab\"\r\n   
+    0.5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"90b3fe76-4d4d-4562-92be-36dcf07a088d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 3.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"d61b31fe-1ba3-4533-8d05-891d7bf43ab1\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"1f510064-5093-437f-b82b-60d4d9475dba\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"PlayerLife\",\r\n      \"type\": \"int\",\r\n      \"value\": 100\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"a2e28cf4-fb33-4a38-b305-c52587dbe6af\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"da7e37fc-0ed4-43da-895b-a0902b587fa1\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyLife\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 100\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"962bdc4a-8181-43f5-b662-c806b36fa322\",\r\n   
