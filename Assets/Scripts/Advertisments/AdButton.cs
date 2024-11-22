@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class AdButton : MonoBehaviour
 {
-    public void ExecuteAd() => AdsManager.instance.ShowRewardedAd();
+    public void ExecuteAd() 
+    { 
+        AdsManager.instance.ShowRewardedAd(); 
+    }
 }
