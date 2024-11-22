@@ -41,6 +41,8 @@ public class FSMStateManager : MonoBehaviour, IDamageable
 
     private void Start()
     {
+        moveSpeed = MyRemoteConfig.Instance.enemySpeed;
+
         _currentState = idleState;
 
         _currentState.Awake(this);

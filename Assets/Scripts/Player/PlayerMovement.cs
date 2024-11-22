@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float _speed = 4f;
+    [SerializeField] float _speed;
     [SerializeField] Controller _controller;
 
     public void Start()
     {
-        //_speed = MyRemoteConfig.Instance.playerSpeed;
+        _speed = MyRemoteConfig.Instance.playerSpeed;
 
         PauseManager.instance.Subscribe(ArtificialUpdate);
     }
