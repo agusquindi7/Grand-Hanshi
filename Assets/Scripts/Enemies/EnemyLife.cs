@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyLife : EntityLife , IDamageable
 {
+    [SerializeField] Animator anim;
     private void Start()
     {
         life = MyRemoteConfig.Instance.maxEnemyLife;
@@ -13,6 +14,12 @@ public class EnemyLife : EntityLife , IDamageable
     public void TakeDamage(float dmg)
     {
         life -= dmg;
+
+        //Por si no llego
+        if(life <30)
+        {
+            PlayerPrefsSave.instance.CompleteLevel(250, 25);
+        }
 
         if (life < 1)
         {
