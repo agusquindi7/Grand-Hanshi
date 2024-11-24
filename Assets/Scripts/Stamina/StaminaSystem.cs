@@ -84,22 +84,22 @@ public class StaminaSystem : MonoBehaviour
         {
             currentStamina -= quantityOfUsage;
             UpdateStamina();
+            SceneManager.LoadSceneAsync("FirstDojo");
 
             if(!_recharging)
             {
                 _nextStaminaTime = AddDuration(DateTime.Now, _timerToRecharge);
                 StartCoroutine(ChargingStamina());
                 //Agus Add-Ons
-                SceneManager.LoadSceneAsync("FirstDojo");
                 //
             }
-            else
-            {
-                //Agus Add-Ons
-                panel.SetActive(true);
-                //
-                Debug.Log("No stamina!");
-            }
+        }
+        else
+        {
+            //Agus Add-Ons
+            panel.SetActive(true);
+            //
+            Debug.Log("No stamina!");
         }
     }
 
