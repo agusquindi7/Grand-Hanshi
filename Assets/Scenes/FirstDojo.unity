@@ -24638,6 +24638,7 @@ GameObject:
   - component: {fileID: 7620816993929554005}
   - component: {fileID: 7620816993929554007}
   - component: {fileID: 7620816993929554009}
+  - component: {fileID: 7620816993929554010}
   m_Layer: 7
   m_Name: FlavioMiclima
   m_TagString: Untagged
@@ -25375,6 +25376,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7620816993929554010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7100281059817698026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d12440323250a4eb57c05faef7c7aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7650476916382967792
 Transform:
   m_ObjectHideFlags: 0

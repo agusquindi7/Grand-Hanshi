@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float _speed = 4f;
@@ -9,18 +8,22 @@ public class PlayerMovement : MonoBehaviour
 
     public void Start()
     {
-        //_speed = MyRemoteConfig.Instance.playerSpeed;
-
         PauseManager.instance.Subscribe(ArtificialUpdate);
     }
 
     void ArtificialUpdate()
     {
-        transform.position += _controller.GetMovementInput() * _speed * Time.deltaTime;
+        Vector3 movementInput = _controller.GetMovementInput();
+
+        // Ajustar la dirección de movimiento según la rotación del jugador
+        movementInput = transform.TransformDirection(movementInput);
+
+        transform.position += movementInput * _speed * Time.deltaTime;
     }
 
     private void OnDestroy()
     {
         PauseManager.instance.Unsubscribe(ArtificialUpdate);
     }
+    //Vercion Funcinal del script
 }

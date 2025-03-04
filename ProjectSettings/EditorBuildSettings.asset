@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FirstDojo.unity
     guid: c850ee8c3b14cc8459e7e186857cf567
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: e79a40cc0dc49e34fb77e67b7da42bba
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: a1190a588cdfac84fa517ca443775ca5, type: 2}
