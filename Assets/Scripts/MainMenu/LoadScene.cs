@@ -1,13 +1,44 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.UI;
 
 public class LoadScene : MonoBehaviour
-{ 
+{
+    [SerializeField] private Slider loadbar;
+    [SerializeField] private GameObject loadPanel;
+    [SerializeField] private float cooldownTime = 2.0f; // Tiempo de cooldown en segundos
+
+    void Start()
+    {
+        loadPanel.SetActive(false);  // Asegúrate de que el panel esté apagado al inicio.
+    }
+
     public void SceneLoad(string scene)
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(scene);
+        StartCoroutine(LoadWithCooldown(scene));
+    }
+
+    private IEnumerator LoadWithCooldown(string scene)
+    {
+        // Activa el panel primero.
+        loadPanel.SetActive(true);
+        // Espera el tiempo de cooldown antes de comenzar a cargar la escena.
+        yield return new WaitForSeconds(cooldownTime);
+        StartCoroutine(LoadAsync(scene));
+    }
+
+    private IEnumerator LoadAsync(string scene)
+    {
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(scene);
+
+        while (!asyncOperation.isDone)
+        {
+            Debug.Log(asyncOperation.progress);
+            loadbar.value = asyncOperation.progress / 0.9f;
+            yield return null;
+        }
+        loadbar.value = 1f; // Asegúrate de que la barra de carga esté llena al terminar la carga.
     }
 
     public void QuitGame()
@@ -15,33 +46,3 @@ public class LoadScene : MonoBehaviour
         Application.Quit();
     }
 }
-
-/*public class LoadScene : MonoBehaviour
-{
-    public void SceneLoad(string scene)
-    {
-        StartCoroutine(DelayedLoad(scene, 0.5f));
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
-    private IEnumerator DelayedLoad(string scene, float delay)
-    {
-        // Esperar por el tiempo especificado
-        yield return new WaitForSeconds(delay);
-
-        // Reiniciar el tiempo del juego a la velocidad normal
-        Time.timeScale = 1f;
-
-        // Cargar la nueva escena
-        SceneManager.LoadScene(scene);
-    }
-}*/
-
-//Habia echo esto para retrasar la recarga de la escena y que se escuche el sonido del boton pero rompia el volver al menu de la pausa dentro del nivel 1
-
-
-

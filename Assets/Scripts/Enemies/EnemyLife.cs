@@ -8,6 +8,7 @@ public class EnemyLife : EntityLife, IDamageable
 {
     public AudioClip damageSound;
     public Slider healthSlider;
+    public GameObject deathPanel;
 
     private AudioSource audioSource;
 
@@ -17,6 +18,7 @@ public class EnemyLife : EntityLife, IDamageable
         audioSource = GetComponent<AudioSource>();
         healthSlider.maxValue = life;
         healthSlider.value = life;
+        deathPanel.SetActive(false);
     }
 
     public void TakeDamage(float dmg)
@@ -28,7 +30,7 @@ public class EnemyLife : EntityLife, IDamageable
 
         if (life < 1)
         {
-            SceneManager.LoadScene("AnimatedMenu");
+            deathPanel.SetActive(true);
             Destroy(gameObject);
         }
     }
@@ -40,13 +42,4 @@ public class EnemyLife : EntityLife, IDamageable
             audioSource.PlayOneShot(damageSound);
         }
     }
-
-
-    // Start is called before the first frame update
-    //public void OnEnable()
-    //{
-    //    life = MyRemoteConfig.Instance.maxEnemyLife;
-    //}
 }
-
-
