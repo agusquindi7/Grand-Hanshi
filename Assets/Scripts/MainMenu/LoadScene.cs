@@ -21,17 +21,21 @@ public class LoadScene : MonoBehaviour
 
     private IEnumerator LoadWithCooldown(string scene)
     {
+        Debug.Log("entre a la corrutina LOADCOOLDOWN");
         // Activa el panel primero.
         loadPanel.SetActive(true);
         // Espera el tiempo de cooldown antes de comenzar a cargar la escena.
+        Debug.Log("TIMESCALE CAMBIADO A 1");
+        Time.timeScale = 1f;
         yield return new WaitForSeconds(cooldownTime);
+        Debug.Log("saliendo de la corrutina LoadWithCooldowns");
         StartCoroutine(LoadAsync(scene));
     }
 
     private IEnumerator LoadAsync(string scene)
     {
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(scene);
-
+        Debug.Log("entre a la corrutina LOADASYNC");
         while (!asyncOperation.isDone)
         {
             Debug.Log(asyncOperation.progress);
