@@ -56,11 +56,11 @@ public class EnemyLife : EntityLife, IDamageable
     //{
     //    life = MyRemoteConfig.Instance.maxEnemyLife;
     //}
-}
-            deathPanel.SetActive(true);
-            Destroy(gameObject);
-        }
-    }
+//    }
+//            deathPanel.SetActive(true);
+//            Destroy(gameObject);
+//        }
+//    }
 
     private void PlayDamageSound()
     {

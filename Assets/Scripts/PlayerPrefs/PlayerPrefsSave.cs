@@ -38,7 +38,7 @@ public class PlayerPrefsSave : MonoBehaviour
         _gemsText.text = $"Jade pieces: {_dragonGems}";
     }
 
-    void SaveGame()
+    public void SaveGame()
     {
         PlayerPrefs.SetInt("Data_Currency", _currency);
         PlayerPrefs.SetInt("Data_Gems", _dragonGems);
