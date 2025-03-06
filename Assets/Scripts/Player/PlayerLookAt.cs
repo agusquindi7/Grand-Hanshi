@@ -11,7 +11,7 @@ public class PlayerLookAt : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius, layerMask);
         foreach(var hit in colliders)
         {
-            if(hit.GetComponent<EnemyLife>())
+            if(hit.GetComponent<Objetive>())
             {
                 Vector3 dir = (hit.transform.position - transform.position);
                 dir.y = 0;
@@ -23,6 +23,8 @@ public class PlayerLookAt : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
+    //Vercion Funcinal del script
 }

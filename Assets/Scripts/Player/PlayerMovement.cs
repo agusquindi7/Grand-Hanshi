@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float _speed;
@@ -16,11 +15,17 @@ public class PlayerMovement : MonoBehaviour
 
     void ArtificialUpdate()
     {
-        transform.position += _controller.GetMovementInput() * _speed * Time.deltaTime;
+        Vector3 movementInput = _controller.GetMovementInput();
+
+        // Ajustar la direcci�n de movimiento seg�n la rotaci�n del jugador
+        movementInput = transform.TransformDirection(movementInput);
+
+        transform.position += movementInput * _speed * Time.deltaTime;
     }
 
     private void OnDestroy()
     {
         PauseManager.instance.Unsubscribe(ArtificialUpdate);
     }
+    //Vercion Funcinal del script
 }

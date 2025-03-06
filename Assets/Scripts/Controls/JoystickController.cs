@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class JoystickController : Controller , IDragHandler , IEndDragHandler
+public class JoystickController : Controller, IDragHandler, IEndDragHandler
 {
     Vector3 _initialPos;
     [SerializeField] float maxMagnitude = 125f;
@@ -16,8 +16,10 @@ public class JoystickController : Controller , IDragHandler , IEndDragHandler
     public override Vector3 GetMovementInput()
     {
         Vector3 modifiedDir = new Vector3(_moveDir.x, 0, _moveDir.y);
-        //Para dar un efecto de control de velocidad
         modifiedDir /= maxMagnitude;
+
+        modifiedDir = transform.TransformDirection(modifiedDir);
+
         return modifiedDir;
     }
 
@@ -32,4 +34,5 @@ public class JoystickController : Controller , IDragHandler , IEndDragHandler
         transform.position = _initialPos;
         _moveDir = Vector3.zero;
     }
+    //Vercion Funcinal del script
 }

@@ -27,13 +27,10 @@ public class FSMStateManager : MonoBehaviour, IDamageable
     public LayerMask layerMask;
     public float dmg;
     public float timeToRecover = 1.5f;
-    //public bool isGettingHit;
     public float onHitCD;
 
     private void Awake()
     {
-        //moveSpeed = MyRemoteConfig.Instance.enemySpeed;
-
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
         enemyLife = GetComponent<EnemyLife>();
