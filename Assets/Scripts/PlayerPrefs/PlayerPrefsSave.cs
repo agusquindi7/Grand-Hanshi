@@ -10,11 +10,15 @@ public class PlayerPrefsSave : MonoBehaviour
 {
     public static PlayerPrefsSave instance;
 
-    [SerializeField] int _currency, _dragonGems;
+    public string[] _trophies;
+    public int _currency, _dragonGems;
     [SerializeField] TextMeshProUGUI _currencyText, _gemsText;
 
     private void Awake()
     {
+        if (_currencyText == null) _currencyText = GameObject.FindGameObjectWithTag("Currency").GetComponent<TextMeshProUGUI>();
+        if (_gemsText == null) _gemsText = GameObject.FindGameObjectWithTag("Gems").GetComponent<TextMeshProUGUI>();
+        
         if (instance == null) 
         { 
             instance = this;
@@ -24,7 +28,6 @@ public class PlayerPrefsSave : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
     private void Start()
@@ -43,19 +46,39 @@ public class PlayerPrefsSave : MonoBehaviour
         PlayerPrefs.SetInt("Data_Currency", _currency);
         PlayerPrefs.SetInt("Data_Gems", _dragonGems);
 
+        for (int i = 0; i < _trophies.Length; i++)
+        {
+            PlayerPrefs.SetString($"Data_{i}", _trophies[i]);
+        }
+
         PlayerPrefs.Save();
         Debug.Log("Saving game...");
     }
 
     public void LoadGame()
     {
-        if (PlayerPrefs.HasKey("Data_Currency"))
-            _currency = PlayerPrefs.GetInt("Data_Currency", 100);
-        if (PlayerPrefs.HasKey("Data_Gems"))
-            _dragonGems = PlayerPrefs.GetInt("Data_Gems", 0);
+        // Cargar valores de Currency y Gems
+        _currency = PlayerPrefs.GetInt("Data_Currency", 100);
+        _dragonGems = PlayerPrefs.GetInt("Data_Gems", 0);
 
-        Debug.Log("Loading data...");
+        // Verificar que _trophies está inicializado
+        if (_trophies == null || _trophies.Length == 0)
+        {
+            Debug.LogError("Error: _trophies no ha sido inicializado o está vacío.");
+            return;
+        }
+
+        // Cargar los valores de los trofeos
+        for (int i = 0; i < _trophies.Length; i++)
+        {
+            _trophies[i] = PlayerPrefs.GetString($"Data_{i}", "NB");
+        }
+
+        // Debugging para verificar datos cargados
+        Debug.Log($"Currency: {_currency}, Gems: {_dragonGems}");
+        Debug.Log("Trophies: " + string.Join(", ", _trophies));
     }
+
 
     public void CompleteLevel(int pointsToAdd, int gemsToAdd)
     {
@@ -77,7 +100,19 @@ public class PlayerPrefsSave : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
 
-        Debug.Log("Deleting game...");
+        Debug.Log("Deleting game data...");
+    }
+
+    public void StartLGWCooldown()
+    {
+        StartCoroutine(LoadGameWithCooldown());
+    }
+
+    private IEnumerator LoadGameWithCooldown()
+    {
+        LoadGame();
+
+        yield return new WaitForSeconds(1.5f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
