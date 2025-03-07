@@ -30,8 +30,20 @@ public class EnemyLife : EntityLife, IDamageable
 
         if (life < 1)
         {
+<<<<<<< Updated upstream
             deathPanel.SetActive(true);
             Destroy(gameObject);
+=======
+
+            PlayerPrefsSave.instance.CompleteLevel(250, 25);
+            //SceneManager.LoadScene("AnimatedMenu");
+            //panelVictory.SetActive(true);
+            //Destroy(gameObject);
+            anim.SetTrigger("isDead");
+            fsm.moveSpeed = 0;
+            //PauseManager.instance.Pause(true);
+            //PauseFlavio();
+>>>>>>> Stashed changes
         }
     }
 
