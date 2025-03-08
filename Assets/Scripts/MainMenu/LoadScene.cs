@@ -58,7 +58,7 @@ public class LoadScene : MonoBehaviour
             loadbar.value = asyncOperation.progress / 0.9f;
             yield return null;
         }
-        loadbar.value = 1f; // Asegúrate de que la barra de carga esté llena al terminar la carga.
+        loadbar.value = 1f;
     }
 
     public void QuitGame()

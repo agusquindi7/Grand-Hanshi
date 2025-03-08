@@ -9,17 +9,13 @@ public class PlayerMovement : MonoBehaviour
     public void Start()
     {
         _speed = MyRemoteConfig.Instance.playerSpeed;
-
         PauseManager.instance.Subscribe(ArtificialUpdate);
     }
 
     void ArtificialUpdate()
     {
         Vector3 movementInput = _controller.GetMovementInput();
-
-        // Ajustar la direcci�n de movimiento seg�n la rotaci�n del jugador
         movementInput = transform.TransformDirection(movementInput);
-
         transform.position += movementInput * _speed * Time.deltaTime;
     }
 
