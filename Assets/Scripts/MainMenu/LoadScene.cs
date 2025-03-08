@@ -16,6 +16,13 @@ public class LoadScene : MonoBehaviour
         loadPanel.SetActive(false);
     }
 
+    public void SimpleLoadScene(string scene)
+    {
+        //Para asegurarme que no siga en pausa
+        PauseManager.instance.Pause(false);
+        SceneManager.LoadScene(scene);
+    }
+
     public void SceneLoad(string scene)
     {
         if (staminaSys.HasEnoughStamina(3))

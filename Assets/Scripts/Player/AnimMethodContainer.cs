@@ -20,7 +20,7 @@ public class AnimMethodContainer : AttackManager
         if (cds[0] == mcds[0] && !isOnMenu)
         {
             //cds[0] = 0;
-            attacks[0].Execute(transform.position, 3f);
+            attacks[0].Execute(transform.position, 1.2f);
             PlayAttackSound(attackSound0);
         }
     }
@@ -29,7 +29,7 @@ public class AnimMethodContainer : AttackManager
         if (cds[1] == mcds[1] && !isOnMenu)
         {
             //cds[1] = 0;
-            attacks[1].Execute(transform.position, 3f);
+            attacks[1].Execute(transform.position, 1.35f);
             PlayAttackSound(attackSound1);
         }
     }
@@ -38,7 +38,7 @@ public class AnimMethodContainer : AttackManager
         if (cds[2] == mcds[2] && !isOnMenu)
         {
             //cds[2] = 0;
-            attacks[2].Execute(transform.position, 3f);
+            attacks[2].Execute(transform.position, 1.7f);
             PlayAttackSound(attackSound2);
         }
     }
@@ -47,7 +47,7 @@ public class AnimMethodContainer : AttackManager
         if (cds[3] == mcds[3] && !isOnMenu)
         {
             //cds[3] = 0;
-            attacks[3].Execute(transform.position, 3f);
+            attacks[3].Execute(transform.position, 1.5f);
             PlayAttackSound(attackSound3);
         }
     }

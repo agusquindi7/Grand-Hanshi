@@ -9,7 +9,7 @@ public class BannerAds : MonoBehaviour
 
     private void Awake()
     {
-        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_RIGHT);
+        Advertisement.Banner.SetPosition(BannerPosition.TOP_LEFT);
     }
 
     public void LoadBannerAd()

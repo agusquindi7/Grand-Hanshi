@@ -18,4 +18,4 @@ MonoBehaviour:
   triggerName: highKick
   layerMask:
     serializedVersion: 2
-    m_Bits: 183
+    m_Bits: 128

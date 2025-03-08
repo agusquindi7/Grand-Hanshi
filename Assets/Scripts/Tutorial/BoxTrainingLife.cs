@@ -14,7 +14,8 @@ public class BoxTrainingLife : EntityLife, IDamageable
 
     private void Start()
     {
-        life = MyRemoteConfig.Instance.maxEnemyLife;
+        //life = MyRemoteConfig.Instance.maxEnemyLife;
+        life = maxLife;
         audioSource = GetComponent<AudioSource>();
         healthSlider.maxValue = life;
         healthSlider.value = life;
@@ -27,6 +28,7 @@ public class BoxTrainingLife : EntityLife, IDamageable
         life -= dmg;
         healthSlider.value = life;
 
+        Debug.Log("LE PEGASTE A LA BOLSA");
         PlayDamageSound();
 
         if (life <= 0)

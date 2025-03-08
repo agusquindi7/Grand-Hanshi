@@ -93,7 +93,7 @@ public class PlayerPrefsSave : MonoBehaviour
         PlayerPrefs.SetInt("Data_Currency", currentCurrency);
         PlayerPrefs.SetInt("Data_Gems", currentGems);
 
-        PlayerPrefs.Save();
+        SaveGame();
     }
 
     public void DeleteGame()

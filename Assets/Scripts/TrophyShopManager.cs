@@ -27,7 +27,7 @@ public class TrophyShopManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void Start()
     {
         for (int i = 0; i < texts.Length; i++)
         {
@@ -53,6 +53,35 @@ public class TrophyShopManager : MonoBehaviour
 
                 if (trophies[i].costYuans != 0)
                     texts[i].text = $"{trophies[i].trophyName} BOUGHT!";
+            }
+        }
+    }
+
+    public void Update()
+    {
+        for (int i = 0; i < texts.Length; i++)
+        {
+            if (PlayerPrefsSave.instance._trophies[i] == "NB") //IF NOT BOUGHT
+            {
+                //Debug.Log($"Pasando por los NB {i}");
+                sprites[i].sprite = trophies[i].sprite;
+
+                if (trophies[i].costYuans != 0)
+                {
+                    texts[i].text = $"{trophies[i].trophyName} YUANS {trophies[i].costYuans}";
+                }
+                else
+                {
+                    texts[i].text = $"{trophies[i].trophyName} JADES {trophies[i].costJades}";
+                }
+            }
+
+            else if (PlayerPrefsSave.instance._trophies[i] == "B") //ELSE IF BOUGHT
+            {
+                //Debug.Log($"Pasando por los B {i}");
+                sprites[i].sprite = trophies[i].sprite;
+
+                texts[i].text = $"{trophies[i].trophyName} BOUGHT!";
             }
         }
     }
